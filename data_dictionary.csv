@@ -1,0 +1,96 @@
+DATA MODEL,,
+The database md_water_services includes more than 60000 unique records and 43 columns.,,
+,,
+EMPLOYEE TABLE,,
+Column name,Description,Data type
+assigned_employee_id,Unique ID assigned to each employee.,INT
+employee_name,Name of the employee.,VARCHAR255
+phone_number,Contact number of the employee.,VARCHAR15
+email,Email address of the employee.,VARCHAR255
+address,Residential address of the employee.,VARCHAR255
+town_name,Name of the town where the employee resides.,VARCHAR255
+province_name,"Name of the province where the employee
+resides.",VARCHAR255
+position,Position or job title of the employee.,VARCHAR255
+,,
+GLOBAL WATER ACCESS TABLE,,
+Column name,Description,Data type
+name,The country or area name.,VARCHAR255
+region,Geographical region.,VARCHAR255
+year,Year of the data record.,INT
+pop_n,"The national population size estimate in
+thousands.",FLOAT
+pop_u,"The urban population share estimate in
+percentage points %.",FLOAT
+wat_bas_n,"The estimated national share of people with at
+least basic service %.",FLOAT
+wat_lim_n,"The estimated national share of people with
+limited service %.",FLOAT
+wat_unimp_n,"The estimated national share of people with
+unimproved service %.",FLOAT
+wat_sur_n,"The estimated national share of people with
+surface service %.",FLOAT
+wat_bas_r,"The estimated rural share of people with at
+least basic service %.",FLOAT
+wat_lim_r,"The estimated rural share of people with limited
+service %.",FLOAT
+wat_unimp_r,"The estimated rural share of people with
+unimproved service %.",FLOAT
+wat_sur_r,"The estimated rural share of people with
+surface service %.",FLOAT
+wat_bas_u,"The estimated urban share of people with at
+least basic service %.",FLOAT
+wat_lim_u,"The estimated urban share of people with
+limited service %.",FLOAT
+wat_unimp_u,"The estimated urban share of people with
+unimproved service %.",FLOAT
+wat_sur_u,"The estimated urban share of people with
+surface service %.",FLOAT
+,,
+LOCATION TABLE,,
+Column name,Description,Data type
+location_id,Unique ID assigned to each location.,VARCHAR255
+address,Address of the location.,VARCHAR255
+province_name,"Name of the province where the location is
+situated.",VARCHAR255
+town_name,"Name of the town where the location is
+situated.",VARCHAR255
+location_type,Type or category of the location.,VARCHAR255
+,,
+VISITS TABLE,,
+Column name,Description,Data type
+record_id,Unique ID assigned to each visit.,INT
+location_id,ID of the location visited.,VARCHAR255
+source_id,ID of the water source visited.,VARCHAR510
+time_of_record,Date and time of the visit.,DATETIME
+visit_count,Number of visits made to this location.,INT
+time_in_queue,"Time spent by people waiting for water in a
+queue at the location.",INT
+assigned_employee_id,ID of the employee who visited the location.,INT
+,,
+WATER QUALITY TABLE,,
+Column name,Description,Data type
+record_id,Unique ID assigned to each record.,INT
+subjective_quality_score,"Score representing the subjective quality of the
+water source.",INT
+visit_count,Number of visits made for data collection.,INT
+,,
+WATER SOURCE TABLE,,
+Column name,Description,Data type
+source_id,Unique ID assigned to each water source.,INT
+"type_of_water
+_source","Type or category of the water source. Can be:
+tap_in_home, tap_in_home_broken, well,
+shared_tap, river.",INT
+"Number_of
+_people_served",Number of people served by this water source.,INT
+,,
+WELL POLLUTION TABLE,,
+Column name,Description,Data type
+source_id,"ID of the water source being tested for
+pollution.",VARCHAR258
+date,Date of the pollution test.,DATETIME
+description,Description of the pollution test.,VARCHAR255
+pollutant_ppm,Result of the pollution test in parts per million.,FLOAT
+biological,Biological contamination level.,FLOAT
+results,Result of the pollution test.,VARCHAR255
